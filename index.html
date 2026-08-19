@@ -330,21 +330,16 @@ section{position:relative;z-index:1}
 .bio-p{font-size:14px;line-height:1.95;color:rgba(237,235,228,.62);margin-bottom:16px}
 .timeline{margin-top:44px;display:flex;flex-direction:column}
 .tl-row{
-  display:grid;grid-template-columns:56px 1fr;
+  display:grid;grid-template-columns:64px 1fr;
   gap:0;padding-bottom:28px;position:relative;
 }
 .tl-row:last-child{padding-bottom:0}
 .tl-row::before{
   content:'';position:absolute;
-  left:19px;top:22px;bottom:0;width:1px;background:var(--border);
+  left:32px;top:22px;bottom:0;width:1px;background:var(--border);
 }
 .tl-row:last-child::before{display:none}
-.tl-yr{font-family:var(--serif);font-size:12px;color:var(--gold);padding-top:5px;line-height:1}
-.tl-dot{
-  position:absolute;left:15px;top:7px;
-  width:9px;height:9px;border:1px solid var(--gold);
-  border-radius:50%;background:var(--bg);
-}
+.tl-yr{font-family:var(--serif);font-size:12px;color:var(--gold);padding-top:5px;line-height:1;text-align:center}
 .tl-txt{font-size:13px;line-height:1.75;color:rgba(237,235,228,.6);padding-left:24px}
 .bio-img-wrap{position:relative}
 .bio-img-frame{
@@ -609,6 +604,157 @@ footer{
 .dev-credit a:hover{color:var(--gold)}
 .dev-logo{height:11px;width:auto;color:var(--grey);transition:color .3s}
 .dev-credit a:hover .dev-logo{color:var(--gold)}
+
+
+/* ═══ RESPONSIVE / READABILITY POLISH ═══ */
+/* Numbers are intentional visual anchors: readable first, decorative second. */
+.sit-n{
+  font-size:clamp(64px,6vw,82px);
+  font-weight:400;
+  color:rgba(200,164,90,.38);
+  letter-spacing:.015em;
+  margin-bottom:24px;
+}
+.sit-card:hover .sit-n{color:rgba(200,164,90,.68)}
+.sit-desc{font-size:14px;line-height:1.78;color:rgba(237,235,228,.72)}
+.sit-title{font-size:16px;line-height:1.45}
+.tl-yr{
+  font-size:18px;
+  font-weight:400;
+  letter-spacing:.015em;
+  color:var(--gold2);
+  padding-top:3px;
+  text-align:center;
+}
+.tl-txt{font-size:14px;line-height:1.8;color:rgba(237,235,228,.68)}
+.stat-n{font-size:clamp(48px,4vw,58px);font-weight:400}
+.num-val{font-size:clamp(64px,6.5vw,92px);font-weight:400}
+.num-lab{font-size:11px;color:var(--grey2)}
+.c-art{font-size:13px;color:var(--grey2)}
+.c-res{font-size:24px}
+.bio-p{font-size:14.5px;color:rgba(237,235,228,.68)}
+.prac-desc{font-size:14.5px;color:rgba(237,235,228,.68)}
+.s-body{font-size:15.5px;color:rgba(237,235,228,.68)}
+.ci-val{overflow-wrap:anywhere;word-break:break-word}
+.ci-small{color:var(--grey2)}
+.cases-sect .wrap{overflow:hidden}
+.cases-tbl{table-layout:fixed}
+.cases-tbl th:nth-child(1){width:14%}
+.cases-tbl th:nth-child(2){width:38%}
+.cases-tbl th:nth-child(3){width:14%}
+.cases-tbl th:nth-child(4){width:34%}
+
+@media(max-width:1100px){
+  .hero-stats{bottom:28px;right:28px;gap:18px}
+  .stat-n{font-size:42px}
+  .sit-n{font-size:clamp(58px,8vw,72px)}
+  .tl-yr{font-size:18px}
+  .num-val{font-size:clamp(60px,8vw,82px)}
+}
+
+@media(max-width:700px){
+  .wrap,.wrap-sm{padding-left:20px;padding-right:20px}
+  nav{padding-left:20px;padding-right:20px}
+  nav.stuck{padding-left:20px;padding-right:20px}
+  .mob-menu{padding-left:20px;padding-right:20px}
+
+  .hero{min-height:100svh;height:auto}
+  .hero-l{min-height:100svh;padding:104px 20px 170px}
+  .hero-h1{font-size:clamp(62px,18vw,94px);max-width:100%;overflow-wrap:anywhere}
+  .hero-sub{margin-bottom:34px}
+  .hero-claim{max-width:100%;margin-bottom:34px;font-size:14px;line-height:1.8}
+  .hero-actions{width:100%;gap:10px}
+  .btn-solid,.btn-outline{padding:14px 18px;font-size:11px;flex:1;justify-content:center;min-width:0;text-align:center}
+  .hero-stats{
+    left:20px;right:20px;bottom:20px;
+    display:flex;flex-direction:row;justify-content:space-between;align-items:flex-end;
+    gap:12px;text-align:left;
+  }
+  .stat-n{font-size:clamp(32px,10vw,42px)}
+  .stat-l{font-size:9px;letter-spacing:.1em}
+
+  .sit-grid{grid-template-columns:1fr}
+  .sit-card{padding:30px 22px 42px}
+  .sit-n{font-size:62px;margin-bottom:18px;color:rgba(200,164,90,.44)}
+  .sit-title{font-size:15.5px}
+  .sit-desc{font-size:14px;line-height:1.75}
+  .sit-arrow{opacity:1;transform:none;bottom:20px;right:20px}
+
+  .s-title{font-size:clamp(40px,12vw,58px)}
+  .s-body{font-size:14.5px;line-height:1.75}
+  .bio-grid{gap:42px}
+  .bio-quote{font-size:24px;padding-left:20px}
+  .bio-p{font-size:14px;line-height:1.85}
+  .timeline{margin-top:34px}
+  .tl-row{grid-template-columns:58px 1fr;padding-bottom:24px}
+  .tl-yr{font-size:18px;padding-top:3px;text-align:center}
+  .tl-txt{font-size:13.5px;line-height:1.75;padding-left:20px}
+  .tl-row::before{left:29px}
+
+  .num-grid{grid-template-columns:1fr 1fr}
+  .num-card{padding:42px 16px}
+  .num-val{font-size:clamp(52px,15vw,70px)}
+  .num-lab{font-size:9px;letter-spacing:.1em;line-height:1.5}
+
+  .prac-hdr{gap:12px;padding:24px 0}
+  .prac-idx{font-size:15px;min-width:30px}
+  .prac-name{font-size:21px}
+  .prac-body{padding-left:42px}
+  .prac-desc{font-size:14px;line-height:1.8}
+
+  /* On phones the case table becomes a stack of readable cards instead of overflowing sideways. */
+  .cases-tbl,.cases-tbl tbody,.cases-tbl tr,.cases-tbl td{display:block;width:100%}
+  .cases-tbl thead{display:none}
+  .cases-tbl tr{
+    border:1px solid var(--border2);
+    padding:18px 16px;
+    margin-bottom:12px;
+    background:rgba(255,255,255,.012);
+  }
+  .cases-tbl td{padding:0 0 14px;border:0}
+  .cases-tbl td:last-child{padding-bottom:0}
+  .cases-tbl td::before{
+    display:block;
+    font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--grey);margin-bottom:6px;
+  }
+  .cases-tbl td:nth-child(1)::before{content:'Категория'}
+  .cases-tbl td:nth-child(2)::before{content:'Описание дела'}
+  .cases-tbl td:nth-child(3){display:block!important}
+  .cases-tbl td:nth-child(3)::before{content:'Статья'}
+  .cases-tbl td:nth-child(4)::before{content:'Результат'}
+  .c-name{font-size:14px;line-height:1.5}
+  .c-art{font-size:12px;line-height:1.5}
+  .c-res{font-size:22px}
+
+  .contact-grid{gap:42px}
+  .ci-row{grid-template-columns:78px 1fr;gap:12px}
+  .ci-lab{font-size:9px;letter-spacing:.12em}
+  .ci-val{font-size:14px}
+  .form-grid{gap:0}
+  .fg label{font-size:9px}
+  .fg input,.fg select,.fg textarea{font-size:14px}
+  footer{padding-left:20px;padding-right:20px}
+  .f-row{gap:14px}
+  .f-copy{text-align:left}
+  .wa-btn{width:48px;height:48px;right:18px;bottom:18px}
+}
+
+@media(max-width:380px){
+  .hero-l{padding-left:16px;padding-right:16px}
+  .hero-stats{left:16px;right:16px;gap:8px}
+  .stat-n{font-size:30px}
+  .stat-l{font-size:8px}
+  .btn-solid,.btn-outline{padding-left:12px;padding-right:12px;font-size:10px}
+  .wrap,.wrap-sm{padding-left:16px;padding-right:16px}
+  .sit-card{padding-left:18px;padding-right:18px}
+  .sit-n{font-size:58px}
+  .tl-row{grid-template-columns:48px 1fr}
+  .tl-txt{padding-left:16px}
+  .tl-row::before{left:24px}
+  .ci-row{grid-template-columns:1fr;gap:6px}
+}
+
 </style>
 </head>
 <body>
@@ -737,10 +883,10 @@ footer{
         <p class="bio-p r">С 1997 года работал в органах прокуратуры Челябинской области — следователем, прокурором отдела, заместителем прокурора города, заместителем Челябинского транспортного прокурора и начальником отдела Уральской транспортной прокуратуры.</p>
         <p class="bio-p r">В 2012 году окончил курсы государственных обвинителей в Институте Генеральной прокуратуры РФ в Санкт-Петербурге — <strong style="color:var(--white);font-weight:400">с отличием</strong>. С 2014 года — адвокатская практика.</p>
         <div class="timeline r">
-          <div class="tl-row"><span class="tl-yr">1997</span><div><div class="tl-dot"></div><div class="tl-txt">Старший следователь прокуратуры Челябинской области</div></div></div>
-          <div class="tl-row"><span class="tl-yr">—</span><div><div class="tl-dot"></div><div class="tl-txt">Прокурор отдела → Зам. прокурора города → Зам. Челябинского транспортного прокурора → Нач. отдела Уральской транспортной прокуратуры</div></div></div>
-          <div class="tl-row"><span class="tl-yr">2012</span><div><div class="tl-dot"></div><div class="tl-txt">Институт Генпрокуратуры РФ, СПб — диплом с отличием</div></div></div>
-          <div class="tl-row"><span class="tl-yr">2014</span><div><div class="tl-dot"></div><div class="tl-txt">Адвокатская практика. Адвокатская палата Челябинской области. Реестр № 74/1670, уд. № 1911</div></div></div>
+          <div class="tl-row"><span class="tl-yr">1997</span><div><div class="tl-txt">Старший следователь прокуратуры Челябинской области</div></div></div>
+          <div class="tl-row"><span class="tl-yr">—</span><div><div class="tl-txt">Прокурор отдела → Зам. прокурора города → Зам. Челябинского транспортного прокурора → Нач. отдела Уральской транспортной прокуратуры</div></div></div>
+          <div class="tl-row"><span class="tl-yr">2012</span><div><div class="tl-txt">Институт Генпрокуратуры РФ, СПб — диплом с отличием</div></div></div>
+          <div class="tl-row"><span class="tl-yr">2014</span><div><div class="tl-txt">Адвокатская практика. Адвокатская палата Челябинской области. Реестр № 74/1670, уд. № 1911</div></div></div>
         </div>
       </div>
       <div class="bio-img-wrap rl">
